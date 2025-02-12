@@ -9,8 +9,11 @@ jobs:
     strategy:
       matrix:
         repo:
-          - { source: "ScoopInstaller/Java", target: "scoop_mirror/Java" }
+          - { source: "ScoopInstaller/Scoop", target: "scoop_mirror/Scoop" }
+          - { source: "ScoopInstaller/Main", target: "scoop_mirror/Main" }
           - { source: "ScoopInstaller/Extras", target: "scoop_mirror/Extras" }
+          - { source: "ScoopInstaller/Nonportable", target: "scoop_mirror/Nonportable" }
+          - { source: "ScoopInstaller/Java", target: "scoop_mirror/Java" }
     steps:
       - name: Set up Git environment
         run: |
