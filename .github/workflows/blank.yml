@@ -33,9 +33,9 @@ jobs:
           # 获取所有非隐藏引用并逐一推送
           git for-each-ref --format='%(refname)' refs/heads refs/tags | grep -v 'refs/pull/' | while read ref; do
             echo "Pushing $ref"
-            if ! git push origin "$ref"; then
+            if ! git push origin "$ref" --force; then
               echo "Failed to push $ref"
-              git push origin "$ref" --verbose
+              git push origin "$ref" --force --verbose
               exit 1
             fi
           done
